@@ -1,6 +1,6 @@
 # NEXUS·PCPE
 
-Plugin oficial de investigação policial da **Polícia Civil do Estado de Pernambuco**, com arquitetura de agentes especializados para produção de peças policiais em conformidade com os padrões institucionais da PCPE.
+Plugin para uso institucional de investigação policial da **Polícia Civil do Estado de Pernambuco**, com arquitetura de agentes especializados para produção de peças policiais em conformidade com os padrões institucionais da PCPE.
 
 **Versão:** 1.5.1
 **Autor:** Lukas Furtado — PCPE
@@ -8,7 +8,9 @@ Plugin oficial de investigação policial da **Polícia Civil do Estado de Perna
 **Créditos originais:** Equipe DataVirtus, Prof. Jonas Tomaz
 
 **Licença:** Uso interno — Polícia Civil do Estado de Pernambuco
+
 **Colaboradores:**
+
 Delegado de Polícia Gregório Lucas
 
 Delegado de Polícia Dark Blacker
