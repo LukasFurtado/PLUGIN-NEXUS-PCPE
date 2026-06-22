@@ -1047,7 +1047,7 @@ p,
 
     <div class="fade-in" style="margin-bottom:40px;padding:28px 36px;border-radius:16px;background:linear-gradient(135deg,rgba(91,154,224,0.07) 0%,rgba(0,51,102,0.18) 100%);border:1px solid var(--blue-strong);animation:aura-blue 3.5s ease-in-out infinite;">
       <div style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);margin-bottom:14px;">A Infraestrutura de Inteligência Artificial</div>
-      <p style="font-size:15px;color:var(--text-dim);line-height:1.8;">Após a aplicação das instruções realizadas pelo <strong style="color:var(--accent)">NEXUS</strong> ao que corresponder a sua necessidade, <strong style="color:var(--text)">é a partir daqui que se inicia o verdadeiro poder de processamento e sintetização de dados.</strong> Os arquivos passam a ser analisados pela infraestrutura de Inteligência Artificial do <strong style="color:var(--blue)">Claude</strong>, capaz de analisar até <strong style="color:var(--text)">1 milhão de tokens de contexto</strong> — aproximadamente <strong style="color:var(--text)">750 mil palavras</strong> ou milhares de páginas simultaneamente. <strong style="color:var(--text)">Mais do que ler documentos, o <strong style="color:var(--blue)">Claude</strong> correlaciona informações, identifica padrões e organiza grandes volumes de dados, fornecendo ao profissional uma base analítica de alto nível.</strong></p>
+      <p style="font-size:15px;color:var(--text-dim);line-height:1.8;">Após a aplicação das instruções realizadas pelo <strong style="color:var(--accent)">NEXUS</strong> ao que corresponder a sua solicitação, <strong style="color:var(--text)">é quando se inicia o verdadeiro poder de processamento e sintetização de dados.</strong> Os arquivos passam a ser analisados pela infraestrutura de Inteligência Artificial do <strong style="color:var(--blue)">Claude</strong>, capaz de analisar até <strong style="color:var(--text)">1 milhão de tokens de contexto</strong> — aproximadamente <strong style="color:var(--text)">750 mil palavras</strong> ou milhares de páginas simultaneamente. <strong style="color:var(--text)">Mais do que ler documentos, o <strong style="color:var(--blue)">Claude</strong> correlaciona informações, identifica padrões e organiza grandes volumes de dados, fornecendo ao profissional uma base analítica de alto nível.</strong></p>
     </div>
 <style>
 @keyframes aura-blue {
@@ -1200,16 +1200,48 @@ p,
     <div class="def-block fade-in">
       <div class="def-label">Definição técnica</div>
       <h3>Plugin = Claude + Especialização + Ferramentas</h3>
-      <p>Um plugin é um pacote instalável que transforma o Claude genérico em um especialista: adiciona conhecimento do domínio, habilidades específicas, agentes com papéis definidos e a capacidade de gerar documentos no formato correto para aquela área.</p>
-      <div class="compare-row" style="margin-top:24px;">
-        <div class="compare-card before">
-          <div class="compare-label">Claude sem plugin</div>
-          "Redija uma portaria policial" → texto genérico, sem formatação PCPE, sem fundamentos legais específicos, sem ofícios.
+      <p>Um Plugin representa a evolução da Inteligência Artificial aplicada. Em um único pacote instalável, ele integra conhecimento especializado, habilidades, agentes inteligentes e fluxos de trabalho, transformando o Claude em um sistema completo para executar tarefas complexas.</p>
+      <div style="margin-top:28px;border-radius:14px;overflow:hidden;border:1px solid var(--border-strong);display:grid;grid-template-columns:1fr 1fr;">
+
+        <!-- SEM PLUGIN -->
+        <div style="background:rgba(80,88,110,0.13);padding:26px 24px;border-right:1px solid var(--border-strong);">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:18px;">
+            <span style="width:18px;height:18px;border-radius:50%;background:rgba(200,70,70,0.2);border:1px solid rgba(200,70,70,0.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;color:#e06060;line-height:1;">✕</span>
+            <span style="font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-faint);">Claude sem Plugin</span>
+          </div>
+          <div style="background:rgba(0,0,0,0.22);border:1px solid rgba(255,255,255,0.06);border-radius:9px;padding:12px 14px;margin-bottom:16px;">
+            <div style="font-size:9px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-faint);opacity:0.7;margin-bottom:6px;">Prompt enviado</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-dim);line-height:1.6;">"Cruze os dados desse suspeito com as ocorrências registradas"</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <div style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text-dim);line-height:1.5;"><span style="color:#d06060;flex-shrink:0;font-size:13px;margin-top:1px;">✕</span>Lista genérica, sem estrutura investigativa</div>
+            <div style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text-dim);line-height:1.5;"><span style="color:#d06060;flex-shrink:0;font-size:13px;margin-top:1px;">✕</span>Nenhuma correlação automática de datas e locais</div>
+            <div style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text-dim);line-height:1.5;"><span style="color:#d06060;flex-shrink:0;font-size:13px;margin-top:1px;">✕</span>Sem identificação de padrões ou red flags</div>
+            <div style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text-dim);line-height:1.5;"><span style="color:#d06060;flex-shrink:0;font-size:13px;margin-top:1px;">✕</span>Nenhum produto de inteligência gerado</div>
+            <div style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text-dim);line-height:1.5;"><span style="color:#d06060;flex-shrink:0;font-size:13px;margin-top:1px;">✕</span>Você faz o cruzamento manualmente, célula por célula</div>
+          </div>
         </div>
-        <div class="compare-card after">
-          <div class="compare-label">Claude + Plugin NEXUS·PCPE</div>
-          "Gere a portaria" → portaria completa com cabeçalho PCPE, tipificação correta, ofícios para cada destinatário, em .docx pronto para assinar.
+
+        <!-- COM PLUGIN -->
+        <div style="background:rgba(200,160,32,0.05);padding:26px 24px;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:18px;">
+            <span style="width:18px;height:18px;border-radius:50%;background:rgba(200,160,32,0.2);border:1px solid var(--accent-strong);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;color:var(--accent);line-height:1;">✓</span>
+            <span style="font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);">Claude + Plugin NEXUS·PCPE</span>
+          </div>
+          <div style="background:rgba(200,160,32,0.07);border:1px solid rgba(200,160,32,0.28);border-radius:9px;padding:12px 14px;margin-bottom:16px;">
+            <div style="font-size:9px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);opacity:0.65;margin-bottom:6px;">Prompt enviado</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);line-height:1.6;">"Cruze os dados do investigado e me dê a ficha completa"</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <div style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text);line-height:1.5;"><span style="color:var(--accent);flex-shrink:0;font-size:13px;margin-top:1px;">✓</span>CPF, veículos, endereços e telefones correlacionados</div>
+            <div style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text);line-height:1.5;"><span style="color:var(--accent);flex-shrink:0;font-size:13px;margin-top:1px;">✓</span>Vínculos com ocorrências, mandados e antecedentes</div>
+            <div style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text);line-height:1.5;"><span style="color:var(--accent);flex-shrink:0;font-size:13px;margin-top:1px;">✓</span>Timeline de movimentações e padrões identificados</div>
+            <div style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text);line-height:1.5;"><span style="color:var(--accent);flex-shrink:0;font-size:13px;margin-top:1px;">✓</span><em>Red flags</em> classificados por grau de relevância</div>
+            <div style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text);line-height:1.5;"><span style="color:var(--accent);flex-shrink:0;font-size:13px;margin-top:1px;">✓</span>Ficha de alvo e mapa de vínculos prontos</div>
+            <div style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text);line-height:1.5;"><span style="color:var(--accent);flex-shrink:0;font-size:13px;margin-top:1px;">✓</span>CS estruturada gerada para o Delegado assinar</div>
+          </div>
         </div>
+
       </div>
     </div>
 
@@ -4193,12 +4225,19 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
 const sections = document.querySelectorAll('section[id]');
+const sectionList = Array.from(sections);
 const navObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       document.querySelectorAll('.side-nav a').forEach(a => a.classList.remove('active'));
       const active = document.querySelector('.side-nav a[href="#' + entry.target.id + '"]');
       if (active) active.classList.add('active');
+      const idx = sectionList.indexOf(entry.target);
+      const total = sectionList.length;
+      const counter = document.getElementById('section-counter');
+      const fill = document.getElementById('progress-fill');
+      if (counter) counter.textContent = String(idx + 1).padStart(2, '0') + ' / ' + String(total).padStart(2, '0');
+      if (fill) fill.style.width = ((idx + 1) / total * 100) + '%';
     }
   });
 }, { rootMargin: '-35% 0px -60% 0px', threshold: 0 });
