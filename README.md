@@ -4,14 +4,33 @@ Plugin oficial de investigação policial da **Polícia Civil do Estado de Perna
 
 **Versão:** 1.4.8
 **Autor:** Lukas Furtado — PCPE
+
 **Créditos originais:** Equipe DataVirtus, Prof. Jonas Tomaz
+
 **Licença:** Uso interno — Polícia Civil do Estado de Pernambuco
+**Colaboradores:**
+Delegado de Polícia Gregório Lucas
+
+Delegado de Polícia Dark Blacker
+
+Agente de Polícia Lukas Furtado
+
+Escrivão de Polícia Edilson Nascimento
+
+Desenvolvimento técnico · Prof. Jonas Tomazi / DataVirtus
 
 ---
 
 ## Visão Geral
 
-O **DELEGACIA - PCPE** é um plugin desenvolvido para o Cowork (Claude Desktop), que implementa um sistema de investigação policial baseado em **5 agentes especializados**, cada um representando um papel funcional real dentro da estrutura de uma delegacia de polícia:
+O **NEXUS** é um plugin para o Cowork (Claude Desktop) que transforma o Claude em assistente especializado para toda a atividade policial. Não substitui o julgamento profissional — é instrumento de suporte. Toda peça gerada deve ser lida, conferida, adaptada e assinada pelo servidor responsável. A responsabilidade pelo ato é sempre do ser humano.
+
+Requisitos:
+Assinatura Claude compatível com acesso ao Cowork (Claude Max ou superior)
+Aplicativo Claude Desktop com Cowork habilitado
+
+**Arquitetura de Agentes:**
+O sistema é orquestrado pelo Delegado, ponto de entrada principal, que analisa cada demanda e decide se resolve diretamente ou aciona um agente especializado.
 
 - **Delegado** — Chefe da delegacia, ponto de entrada, estrategista e tomador de decisão
 - **Escrivão** — Guardião da fé pública, especialista em peças cartorárias e processuais
@@ -209,7 +228,7 @@ Os brasões são configuráveis por unidade. Após a instalação, substitua os 
 | Ficha de Alvo / Mapa de Vínculos | Perito | .docx |
 | Laudo Técnico | Perito | .docx |
 | Laudo de Auditoria de Peça | Revisor | Chat (laudo + correções para colar) |
-
+| Ordem de serviço | Delegado | .docx |
 ---
 
 ## Fluxo de Análise Completa ("Analisa Tudo")
@@ -249,7 +268,7 @@ Quando o usuário envia múltiplos arquivos ou solicita análise completa, o Del
 1. Abra o **Cowork** (Claude Desktop)
 2. Acesse **Settings → Plugins → Install from file**
 3. Selecione o arquivo `delegacia-pcpe.plugin`
-4. Após a instalação, substitua os brasões em cada pasta `resources\` das skills pelos arquivos oficiais da sua unidade (`brasao_pcpe.png` e `brasao_pe_estado.png`)
+4. Após a instalação, na tela principal do Cowork, abra uma "nova tarefa", indique o que deseja fazer, forneça as informações necessárias e aperfeiçoe o seu trabalho. O NEXUS guia o processo — Antes revise, durante valide e, ao final, assine.
 
 ---
 
@@ -265,4 +284,4 @@ Créditos pela estrutura original do plugin:
 ---
 
 **Última atualização:** 21 de junho de 2026
-**Versão:** 1.2.7
+**Versão:** 1.4.8
