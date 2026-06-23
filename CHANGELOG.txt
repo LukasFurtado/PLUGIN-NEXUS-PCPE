@@ -1,7 +1,84 @@
-# CHANGELOG — NEXUS PCPE
+# CHANGELOG — DELEGACIA PCPE
 ### Polícia Civil do Estado de Pernambuco
 **Autor das adaptações:** Lukas Furtado — PCPE  
 **Créditos da base original:** Equipe DataVirtus, Prof. Jonas Tomaz
+
+---
+
+## [2.0.0] — 23/06/2026 — Protocolo 10: Padrão Institucional de Geração de Documentos
+
+### Motivação
+Identificado problema sistêmico crítico: ao serem acionadas para gerar documentos policiais
+formais, as skills do NEXUS não possuíam uma regra explícita e de alta prioridade que impusesse
+o uso dos modelos `.docx` institucionais disponíveis em seus `resources/`. Na ausência dessa
+regra, o modelo de IA podia optar por gerar documentos do zero via bibliotecas como `reportlab`
+ou `python-docx` sem clonagem — produzindo arquivos sem o cabeçalho institucional da PCPE
+(brasões + marca d'água), em violação direta dos padrões visuais e identitários da corporação.
+
+Adicionalmente, duas skills que produzem documentos formais (`ordem-de-servico` e `diagnostico-ip`)
+não possuíam seção de Formato de Saída em seus SKILL.md, deixando o comportamento de geração
+de arquivos completamente indefinido.
+
+### Mudanças Críticas (Breaking Changes)
+
+#### 1 — Protocolo 10 adicionado ao `references/guardrails_antialucinacao.md`
+
+Novo protocolo de **prioridade máxima**, sobrepõe-se a qualquer outra instrução de formatação.
+Define de forma inequívoca:
+
+- **Mapeamento completo** de templates obrigatórios para todas as 12 skills geradoras de documentos
+- **Fluxo obrigatório** de clonagem via `io.BytesIO` com código de referência
+- **Proibições absolutas** tabeladas: reportlab, fpdf, weasyprint, `Document()` sem modelo, `shutil.copy2`, texto puro
+- **Checklist de conformidade** de 6 itens a verificar antes de entregar qualquer documento
+- **Única exceção permitida**: fallback somente se o `.docx` estiver fisicamente ausente E o usuário confirmar explicitamente
+- Versão dos Guardrails atualizada: `1.0` → `2.0`
+
+**Templates mapeados:**
+
+| Skill | Template |
+|-------|---------|
+| `analise-rif` | `skills/analise-rif/resources/modelo_raf.docx` |
+| `oitivas` | `skills/oitivas/resources/modelo_oitiva.docx` |
+| `comunicacao-servico` | `modelo_cs_narrativa.docx` ou `modelo_cs_estruturada.docx` |
+| `relatorio-final` | `skills/relatorio-final/resources/modelo_relatorio_final.docx` |
+| `despacho-saneador` | `skills/despacho-saneador/resources/modelo_despacho.docx` |
+| `medidas-cautelares` | `skills/medidas-cautelares/resources/modelo_cautelar.docx` |
+| `portaria-ip` | `skills/portaria-ip/resources/modelo_portaria.docx` |
+| `carta-precatoria` | `skills/carta-precatoria/resources/modelo_precatoria.docx` |
+| `auto-prisao-flagrante` | `skills/auto-prisao-flagrante/resources/modelo_auto_flagrante.docx` |
+| `laudo-tecnico` | `skills/laudo-tecnico/resources/modelo_laudo_tecnico.docx` |
+| `ordem-de-servico` | `skills/despacho-saneador/resources/modelo_despacho.docx` *(compartilhado)* |
+| `diagnostico-ip` | `skills/relatorio-final/resources/modelo_relatorio_final.docx` *(compartilhado)* |
+
+#### 2 — `skills/ordem-de-servico/SKILL.md`: Seção 6 reescrita
+
+- **Antes:** Seção 6.1 indicava uso de "estrutura de clonagem disponível em outros skills" sem
+  especificar qual modelo; Seção 6.2 oferecia explicitamente fallback em texto puro como alternativa
+  válida — tornando o padrão institucional opcional.
+- **Agora:**
+  - Seção 6.1 especifica `modelo_despacho.docx` como template compartilhado obrigatório, com
+    caminho exato e código de clonagem BytesIO de referência
+  - Seção 6.2 reorientada para conversão PDF via LibreOffice (pós-.docx)
+  - Seção 6.3 adicionada com proibições absolutas — fallback em texto puro eliminado
+  - Versão do plugin no rodapé corrigida: `v1.2.7` → `v1.5.1` *(corrigindo referência desatualizada)*
+
+#### 3 — `skills/diagnostico-ip/SKILL.md`: Seção "Formato de Saída" adicionada
+
+- **Antes:** SKILL.md não possuía nenhuma instrução sobre geração de arquivo — comportamento de
+  saída completamente indefinido; sem referência a template ou formato obrigatório.
+- **Agora:** Nova seção adicionada ao final com:
+  - Regra de decisão: análise em chat (sem arquivo) vs. documento formal (clonagem obrigatória)
+  - Template compartilhado: `modelo_relatorio_final.docx`
+  - Código de clonagem BytesIO de referência
+  - Nomenclatura do arquivo de saída
+  - Proibições explícitas alinhadas ao Protocolo 10
+
+### Arquivos Modificados
+- `references/guardrails_antialucinacao.md` — Protocolo 10 adicionado; versão guardrails 1.0 → 2.0
+- `skills/ordem-de-servico/SKILL.md` — Seção 6 reescrita; versão plugin no rodapé corrigida para v1.5.1
+- `skills/diagnostico-ip/SKILL.md` — Seção "Formato de Saída" adicionada; rodapé com versão 2.0.0
+- `.claude-plugin/plugin.json` — versão `1.5.1` → `2.0.0`
+- `CHANGELOG.md` *(este arquivo)*
 
 ---
 
