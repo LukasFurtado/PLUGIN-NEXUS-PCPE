@@ -284,3 +284,9 @@ Créditos pela estrutura original do plugin:
 - Equipe DataVirtus — contato@datavirtus.com.br
 - Prof. Jonas Tomaz
 
+---
+
+## Agradecimento
+
+Antes de tudo, a Deus.
+
