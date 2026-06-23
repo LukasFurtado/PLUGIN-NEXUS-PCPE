@@ -2,7 +2,7 @@
 
 Plugin para uso institucional de investigação policial da **Polícia Civil do Estado de Pernambuco**, com arquitetura de agentes especializados para produção de peças policiais em conformidade com os padrões institucionais da PCPE.
 
-**Versão:** 1.5.1
+**Versão:** 2.0.0
 **Autor:** Lukas Furtado — PCPE
 
 **Créditos originais:** Equipe DataVirtus, Prof. Jonas Tomaz
